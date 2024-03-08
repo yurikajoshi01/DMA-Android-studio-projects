@@ -21,7 +21,9 @@ import androidx.compose.ui.unit.sp
 import com.example.happybirthday.ui.theme.HappyBirthdayTheme
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,8 +36,9 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     GreetingImage(
-                        message = "Happy Birthday DMA MODULE!",
-                        from = "From Everybody!"
+                        message = getString(R.string.happy_birthday_text),
+                        from = getString(R.string.signature_text),
+
                     )
                 }
             }
@@ -52,10 +55,13 @@ fun GreetingText(message: String, from: String, modifier:Modifier = Modifier){
             text = message,
             fontSize = 100.sp,
             lineHeight = 116.sp,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            color = Color.White
+
         )
         Text(
             text = from,
+            color = Color.White,
             fontSize = 36.sp,
             modifier = Modifier
                 .padding(16.dp)
@@ -72,7 +78,8 @@ fun GreetingImage(message: String, from: String, modifier:Modifier = Modifier){
             painter = image,
             contentDescription = null,
             contentScale = ContentScale.Crop,
-            alpha = 0.5F
+            alpha = 80F,
+
         )
         GreetingText(
             message = message,
@@ -80,6 +87,7 @@ fun GreetingImage(message: String, from: String, modifier:Modifier = Modifier){
             modifier = Modifier
                 .fillMaxSize()
                 .padding(8.dp)
+
         )
     }
 }
@@ -89,8 +97,8 @@ fun GreetingImage(message: String, from: String, modifier:Modifier = Modifier){
 fun BirthdayCardPreview() {
     HappyBirthdayTheme {
         GreetingImage(
-            message = "Happy Birthday DMA MODULE!",
-            from = "From Everybody!"
+            message = stringResource(R.string.happy_birthday_text),
+            from = stringResource(R.string.signature_text)
         )
     }
 }
