@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.happybirthday.ui.theme.HappyBirthdayTheme
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -38,7 +39,7 @@ class MainActivity : ComponentActivity() {
                     GreetingImage(
                         message = getString(R.string.happy_birthday_text),
                         from = getString(R.string.signature_text),
-
+                        modifier = Modifier.background(Color.Black)
                     )
                 }
             }
@@ -78,7 +79,8 @@ fun GreetingImage(message: String, from: String, modifier:Modifier = Modifier){
             painter = image,
             contentDescription = null,
             contentScale = ContentScale.Crop,
-            alpha = 80F,
+            alpha = 0.7F,
+            modifier = Modifier.background(Color.Black)
 
         )
         GreetingText(
