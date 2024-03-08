@@ -62,7 +62,8 @@ fun GreetingText(message: String, from: String, modifier:Modifier = Modifier){
 fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier){
     val image = painterResource(R.drawable.androidparty)
     Image(
-        painter = image
+        painter = image,
+        contentDescription = null
     )
 }
 
