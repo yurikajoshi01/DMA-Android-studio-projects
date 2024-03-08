@@ -32,7 +32,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    GreetingText(message = "Happy Birthday DMA MODULE!" ,from ="From Everybody!" ,modifier = Modifier.padding(8.dp))
+                    GreetingImage(
+                        message = "Happy Birthday DMA MODULE!",
+                        from = "From Everybody!"
+                    )
                 }
             }
         }
