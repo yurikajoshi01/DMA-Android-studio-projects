@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    GreetingText(message = "Happy Birthday DMA MODULE!" ,from ="From Everybody!")
+                    GreetingText(message = "Happy Birthday DMA MODULE!" ,from ="From Everybody!" ,modifier = Modifier.padding(8.dp))
                 }
             }
         }
@@ -38,8 +38,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun GreetingText(message: String, from: String, modifier:Modifier = Modifier){
-    Column( verticalArrangement = Arrangement.Center,
-        modifier = modifier.padding(8.dp)
+    Column( verticalArrangement = Arrangement.Center
     ) {
         Text(
             text = message,
