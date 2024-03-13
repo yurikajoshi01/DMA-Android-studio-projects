@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MainPage()
+
                 }
             }
         }
@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MainPage(modifier: Modifier = Modifier) {
+fun CardMessage(){
 
 }
 
