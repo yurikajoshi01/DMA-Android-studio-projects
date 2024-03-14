@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.quadrants.ui.theme.QuadrantsTheme
 import androidx.compose.ui.unit.dp
@@ -39,6 +40,7 @@ fun CardMessage(topic: String, description: String, modifier: Modifier = Modifie
     Column {
         Text(
             text = topic,
+            fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(bottom = 16.dp)
         )
 
