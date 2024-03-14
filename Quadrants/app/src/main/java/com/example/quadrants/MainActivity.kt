@@ -3,6 +3,7 @@ package com.example.quadrants
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
@@ -35,15 +36,17 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun CardMessage(topic: String, description: String, modifier: Modifier = Modifier){
-    Text(
-        text = topic,
-        modifier = Modifier.padding(bottom = 16.dp)
-    )
+    Column {
+        Text(
+            text = topic,
+            modifier = Modifier.padding(bottom = 16.dp)
+        )
 
-    Text(
-        text = description,
-        textAlign = TextAlign.Justify
-    )
+        Text(
+            text = description,
+            textAlign = TextAlign.Justify
+        )
+    }
 }
 
 
