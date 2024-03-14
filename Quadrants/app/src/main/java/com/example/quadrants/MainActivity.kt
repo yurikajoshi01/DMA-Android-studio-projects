@@ -13,6 +13,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
@@ -43,7 +44,8 @@ fun CardMessage(topic: String, description: String, modifier: Modifier = Modifie
     Column (modifier = modifier
                 .padding(16.dp)
                 .fillMaxHeight(),
-            verticalArrangement = Arrangement.Center
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
 
     ){
         Text(
