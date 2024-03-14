@@ -53,8 +53,8 @@ fun ComposeQuadrants(){
             )
             CardMessage(
                 color = Color(0xFFEADDFF),
-                topic = "Text composable",
-                description = "Displays text and follows the recommended Material Design guidelines.",
+                topic = "Image composable",
+                description = "Creates a composable that lays out and draws a given Painter class object.",
                 modifier = Modifier.weight(1f)
             )
         }
@@ -62,14 +62,14 @@ fun ComposeQuadrants(){
         Row(Modifier.weight(1f)) {
             CardMessage(
                 color = Color(0xFFEADDFF),
-                topic = "Text composable",
-                description = "Displays text and follows the recommended Material Design guidelines.",
+                topic = "Row composable",
+                description = "A layout composable that places its children in a horizontal sequence.",
                 modifier = Modifier.weight(1f)
             )
             CardMessage(
                 color = Color(0xFFEADDFF),
-                topic = "Text composable",
-                description = "Displays text and follows the recommended Material Design guidelines.",
+                topic = "Column composable",
+                description = "A layout composable that places its children in a vertical sequence.",
                 modifier = Modifier.weight(1f)
             )
         }
