@@ -3,7 +3,9 @@ package com.example.quadrants
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
@@ -28,7 +30,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-
+                    CardMessage(topic = "Text composable", description = "Displays text and follows the recommended Material Design guidelines.")
                 }
             }
         }
@@ -37,7 +39,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun CardMessage(topic: String, description: String, modifier: Modifier = Modifier){
-    Column {
+    Column (modifier = modifier
+        .padding(16.dp)
+        .fillMaxHeight()
+    ){
         Text(
             text = topic,
             fontWeight = FontWeight.Bold,
