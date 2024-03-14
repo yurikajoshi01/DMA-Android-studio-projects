@@ -31,8 +31,14 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun CardMessage(topic: String, description: String, color: Color, modifier: Modifier){
+fun CardMessage(topic: String, description: String, modifier: Modifier = Modifier){
+    Text(
+        text = topic
 
+    )
+    Text(
+        text = description
+    )
 }
 
 
@@ -41,6 +47,6 @@ fun CardMessage(topic: String, description: String, color: Color, modifier: Modi
 @Composable
 fun QuadrantsPreview() {
     QuadrantsTheme {
-
+        CardMessage(topic = "Text composable", description = "Displays text and follows the recommended Material Design guidelines.")
     }
 }
