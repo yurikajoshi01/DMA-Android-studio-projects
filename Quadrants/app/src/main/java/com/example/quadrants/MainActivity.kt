@@ -40,6 +40,11 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
+fun ComposeQuadrants(){
+
+}
+
+@Composable
 fun CardMessage(topic: String, description: String, modifier: Modifier = Modifier, color: Color){
     Column (modifier = modifier
                 .background(color)
