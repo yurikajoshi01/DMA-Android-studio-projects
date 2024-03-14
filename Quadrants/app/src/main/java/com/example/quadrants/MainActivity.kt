@@ -9,6 +9,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.quadrants.ui.theme.QuadrantsTheme
 
@@ -30,7 +31,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun CardMessage(){
+fun CardMessage(topic: String, description: String, color: Color, modifier: Modifier){
 
 }
 
@@ -40,6 +41,6 @@ fun CardMessage(){
 @Composable
 fun QuadrantsPreview() {
     QuadrantsTheme {
-        MainPage()
+
     }
 }
