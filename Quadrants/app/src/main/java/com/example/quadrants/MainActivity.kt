@@ -45,11 +45,33 @@ class MainActivity : ComponentActivity() {
 fun ComposeQuadrants(){
     Column(Modifier.fillMaxWidth()) {
         Row(Modifier.weight(1f)) {
-
+            CardMessage(
+                color = Color(0xFFEADDFF),
+                topic = "Text composable",
+                description = "Displays text and follows the recommended Material Design guidelines.",
+                modifier = Modifier.weight(1f)
+            )
+            CardMessage(
+                color = Color(0xFFEADDFF),
+                topic = "Text composable",
+                description = "Displays text and follows the recommended Material Design guidelines.",
+                modifier = Modifier.weight(1f)
+            )
         }
 
         Row(Modifier.weight(1f)) {
-
+            CardMessage(
+                color = Color(0xFFEADDFF),
+                topic = "Text composable",
+                description = "Displays text and follows the recommended Material Design guidelines.",
+                modifier = Modifier.weight(1f)
+            )
+            CardMessage(
+                color = Color(0xFFEADDFF),
+                topic = "Text composable",
+                description = "Displays text and follows the recommended Material Design guidelines.",
+                modifier = Modifier.weight(1f)
+            )
         }
     }
 
