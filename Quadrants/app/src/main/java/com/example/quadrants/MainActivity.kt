@@ -18,6 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.quadrants.ui.theme.QuadrantsTheme
@@ -47,14 +48,14 @@ fun ComposeQuadrants(){
         Row(Modifier.weight(1f)) {
             CardMessage(
                 color = Color(0xFFEADDFF),
-                topic = "Text composable",
-                description = "Displays text and follows the recommended Material Design guidelines.",
+                topic = stringResource(R.string.first_title),
+                description = stringResource(R.string.first_description),
                 modifier = Modifier.weight(1f)
             )
             CardMessage(
                 color = Color(0xFFD0BCFF),
-                topic = "Image composable",
-                description = "Creates a composable that lays out and draws a given Painter class object.",
+                topic = stringResource(R.string.second_title),
+                description = stringResource(R.string.second_description),
                 modifier = Modifier.weight(1f)
             )
         }
@@ -62,14 +63,14 @@ fun ComposeQuadrants(){
         Row(Modifier.weight(1f)) {
             CardMessage(
                 color = Color(0xFFB69DF8),
-                topic = "Row composable",
-                description = "A layout composable that places its children in a horizontal sequence.",
+                topic = stringResource(R.string.third_title),
+                description = stringResource(R.string.third_description),
                 modifier = Modifier.weight(1f)
             )
             CardMessage(
                 color = Color(0xFFF6EDFF),
-                topic = "Column composable",
-                description = "A layout composable that places its children in a vertical sequence.",
+                topic = stringResource(R.string.fourth_title),
+                description = stringResource(R.string.fourth_description),
                 modifier = Modifier.weight(1f)
             )
         }
