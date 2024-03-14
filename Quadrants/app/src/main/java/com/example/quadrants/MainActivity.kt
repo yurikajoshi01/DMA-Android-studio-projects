@@ -6,8 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -41,15 +43,20 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun ComposeQuadrants(){
+    Row {
 
+    }
+    Row{
+
+    }
 }
 
 @Composable
 fun CardMessage(topic: String, description: String, modifier: Modifier = Modifier, color: Color){
     Column (modifier = modifier
-                .background(color)
-                .padding(16.dp)
-                .fillMaxHeight(),
+        .background(color)
+        .padding(16.dp)
+        .fillMaxHeight(),
 
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
