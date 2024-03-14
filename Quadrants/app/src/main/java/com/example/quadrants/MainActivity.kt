@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    //CardMessage(color = Color(0xFFEADDFF), topic = "Text composable", description = "Displays text and follows the recommended Material Design guidelines.")
+                    ComposeQuadrants()
                 }
             }
         }
@@ -52,7 +52,7 @@ fun ComposeQuadrants(){
                 modifier = Modifier.weight(1f)
             )
             CardMessage(
-                color = Color(0xFFEADDFF),
+                color = Color(0xFFD0BCFF),
                 topic = "Image composable",
                 description = "Creates a composable that lays out and draws a given Painter class object.",
                 modifier = Modifier.weight(1f)
@@ -61,13 +61,13 @@ fun ComposeQuadrants(){
 
         Row(Modifier.weight(1f)) {
             CardMessage(
-                color = Color(0xFFEADDFF),
+                color = Color(0xFFB69DF8),
                 topic = "Row composable",
                 description = "A layout composable that places its children in a horizontal sequence.",
                 modifier = Modifier.weight(1f)
             )
             CardMessage(
-                color = Color(0xFFEADDFF),
+                color = Color(0xFFF6EDFF),
                 topic = "Column composable",
                 description = "A layout composable that places its children in a vertical sequence.",
                 modifier = Modifier.weight(1f)
@@ -92,6 +92,7 @@ fun CardMessage(topic: String, description: String, modifier: Modifier = Modifie
             text = topic,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(bottom = 16.dp)
+
         )
 
         Text(
