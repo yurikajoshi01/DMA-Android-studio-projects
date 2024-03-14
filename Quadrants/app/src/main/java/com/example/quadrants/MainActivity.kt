@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    CardMessage(color = Color(0xFFEADDFF), topic = "Text composable", description = "Displays text and follows the recommended Material Design guidelines.")
+                    //CardMessage(color = Color(0xFFEADDFF), topic = "Text composable", description = "Displays text and follows the recommended Material Design guidelines.")
                 }
             }
         }
@@ -43,12 +43,16 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun ComposeQuadrants(){
-    Row {
+    Column(Modifier.fillMaxWidth()) {
+        Row(Modifier.weight(1f)) {
 
-    }
-    Row{
+        }
 
+        Row(Modifier.weight(1f)) {
+
+        }
     }
+
 }
 
 @Composable
@@ -81,6 +85,6 @@ fun CardMessage(topic: String, description: String, modifier: Modifier = Modifie
 @Composable
 fun QuadrantsPreview() {
     QuadrantsTheme {
-        CardMessage(color = Color(0xFFEADDFF), topic = "Text composable", description = "Displays text and follows the recommended Material Design guidelines.")
+        ComposeQuadrants()
     }
 }
