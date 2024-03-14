@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -40,8 +41,10 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun CardMessage(topic: String, description: String, modifier: Modifier = Modifier){
     Column (modifier = modifier
-        .padding(16.dp)
-        .fillMaxHeight()
+                .padding(16.dp)
+                .fillMaxHeight(),
+            verticalArrangement = Arrangement.Center
+
     ){
         Text(
             text = topic,
