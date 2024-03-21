@@ -41,6 +41,7 @@ import androidx.compose.ui.res.dimensionResource
 import com.example.cupcake.ui.StartOrderScreen
 import com.example.cupcake.data.DataSource
 import androidx.compose.ui.platform.LocalContext
+import com.example.cupcake.ui.SelectOptionScreen
 
 
 enum class CupcakeScreen(){
@@ -108,6 +109,7 @@ fun CupcakeApp(
 
             composable(route = CupcakeScreen.Flavor.name){
                 val context = LocalContext.current
+                SelectOptionScreen()
             }
         }
     }
