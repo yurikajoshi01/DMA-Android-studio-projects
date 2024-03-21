@@ -62,6 +62,8 @@ import androidx.core.content.ContextCompat
 import com.example.dessertclicker.data.Datasource
 import com.example.dessertclicker.model.Dessert
 import com.example.dessertclicker.ui.theme.DessertClickerTheme
+import android.util.Log
+
 
 /**
  * Tag for logging purpose
@@ -70,6 +72,7 @@ private const val TAG = "MainActivity"
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d(TAG, "onCreate Called")
         setContent {
             DessertClickerTheme {
                 // A surface container using the 'background' color from the theme
