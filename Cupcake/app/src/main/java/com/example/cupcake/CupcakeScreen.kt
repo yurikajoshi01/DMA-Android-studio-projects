@@ -119,6 +119,10 @@ fun CupcakeApp(
                 )
             }
 
+            composable(route = CupcakeScreen.Pickup.name) {
+
+            }
+
 
         }
     }
