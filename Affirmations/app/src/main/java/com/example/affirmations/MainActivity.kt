@@ -13,6 +13,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.affirmations.model.Affirmation
 import com.example.affirmations.ui.theme.AffirmationsTheme
 import androidx.compose.material3.Card
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,7 +47,10 @@ fun AffirmationsApp(){
 fun AffirmationCard(affirmation: Affirmation, modifier: Modifier){
     Card(modifier = modifier){
         Column{
-
+            Image(
+                painter = painterResource(affirmation.imageResourceId),
+                contentDescription = stringResource(affirmation.stringResourceId),
+                )
         }
     }
 }
