@@ -152,5 +152,7 @@ fun CupcakeApp(
     }
 }
 
-private fun cancelOrderAndNavigateToStart() {
+private fun cancelOrderAndNavigateToStart( viewModel: OrderViewModel,
+                                           navController: NavHostController) {
+    viewModel.resetOrder()
 }
