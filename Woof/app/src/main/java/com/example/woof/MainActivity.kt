@@ -161,3 +161,12 @@ fun WoofPreview() {
         WoofApp()
     }
 }
+
+/**
+ * Composable that displays what the UI of the app looks like in Dark theme in the design tab.
+ */
+@Preview
+@Composable
+fun woofDarkThemePreview(){
+
+}
