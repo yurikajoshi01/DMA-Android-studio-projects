@@ -128,6 +128,9 @@ fun CupcakeApp(
                 )
             }
 
+            composable(route = CupcakeScreen.Summary.name) {
+
+            }
 
         }
     }
