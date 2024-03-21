@@ -171,7 +171,7 @@ fun DogInformation(
  *Composable displaying the brand logo image
  */
 
-
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun WoofTopAppBar (modifier: Modifier = Modifier) {
     CenterAlignedTopAppBar(
