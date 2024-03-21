@@ -143,7 +143,7 @@ fun CupcakeApp(
                     orderUiState = uiState,
                     onCancelButtonClicked = {cancelOrderAndNavigateToStart(viewModel, navController)},
                     onSendButtonClicked = { subject: String, summary: String ->
-
+                        shareOrder(context, subject = subject, summary = summary)
                     },
                     modifier = Modifier.fillMaxHeight()
                 )
