@@ -24,6 +24,7 @@ import androidx.compose.material3.Text
 import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -72,7 +73,9 @@ fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier){
 @Composable
 fun AffirmationList(AffirmationList: List<Affirmation>, modifier: Modifier = Modifier){
     LazyColumn(modifier = modifier){
+        items(AffirmationList){
 
+        }
     }
 }
 
