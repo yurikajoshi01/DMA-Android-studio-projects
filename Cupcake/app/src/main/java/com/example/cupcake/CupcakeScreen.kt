@@ -44,7 +44,7 @@ import androidx.compose.ui.platform.LocalContext
 import com.example.cupcake.ui.SelectOptionScreen
 import androidx.compose.foundation.layout.fillMaxHeight
 import com.example.cupcake.data.DataSource.flavors
-
+import com.example.cupcake.ui.OrderSummaryScreen
 
 enum class CupcakeScreen(){
     Start,
@@ -120,7 +120,12 @@ fun CupcakeApp(
             }
 
             composable(route = CupcakeScreen.Pickup.name) {
-
+                SelectOptionScreen(
+                    subtotal = uiState.price,
+                    options = uiState.pickupOptions,
+                    onSelectionChanged = { viewModel.setDate(it) },
+                    modifier = Modifier.fillMaxHeight()
+                )
             }
 
 
