@@ -36,7 +36,10 @@ import com.example.cupcake.ui.OrderViewModel
 
 
 enum class CupcakeScreen(){
-
+    Start,
+    Flavor,
+    Pickup,
+    Summary
 }
 
 /**
