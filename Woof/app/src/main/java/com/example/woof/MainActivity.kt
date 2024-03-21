@@ -46,6 +46,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.woof.data.Dog
 import com.example.woof.data.dogs
 import com.example.woof.ui.theme.WoofTheme
+import androidx.compose.material3.CenterAlignedTopAppBar
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -165,9 +167,13 @@ fun DogInformation(
 /**
  *Composable displaying the brand logo image
  */
+
 @Composable
 fun WoofTopAppBar (modifier: Modifier = Modifier){
+    CenterAlignedTopAppBar(
 
+        modifier = modifier
+    )
 }
 
 /**
