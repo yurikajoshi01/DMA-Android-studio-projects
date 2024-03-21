@@ -82,7 +82,10 @@ fun DogItem(
     dog: Dog,
     modifier: Modifier = Modifier
 ) {
-    Card() {
+    Card(modifier = Modifier
+        .fillMaxWidth()
+        .padding(dimensionResource(id = R.dimen.padding_small))
+    ) {
         Row(
             modifier = modifier
                 .fillMaxWidth()
