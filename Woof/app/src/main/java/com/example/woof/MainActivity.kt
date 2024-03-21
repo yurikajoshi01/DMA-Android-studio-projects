@@ -65,10 +65,11 @@ class MainActivity : ComponentActivity() {
  */
 @Composable
 fun WoofApp() {
-    Scaffold {
-        LazyColumn {
+    Scaffold {it ->
+        LazyColumn (contentPadding = it){
             items(dogs) {
                 DogItem(dog = it)
+
             }
         }
     }
