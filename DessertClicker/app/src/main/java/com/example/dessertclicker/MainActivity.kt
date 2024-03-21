@@ -72,7 +72,7 @@ private const val TAG = "MainActivity"
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(TAG, "onCreate Called")
+        Log.d(TAG, "onCreate Called") //Logs message OnCreate letting us know that onCreate() was executed.
         setContent {
             DessertClickerTheme {
                 // A surface container using the 'background' color from the theme
