@@ -46,6 +46,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import com.example.cupcake.data.DataSource.flavors
 import com.example.cupcake.ui.OrderSummaryScreen
 
+
 enum class CupcakeScreen(){
     Start,
     Flavor,
@@ -129,7 +130,10 @@ fun CupcakeApp(
             }
 
             composable(route = CupcakeScreen.Summary.name) {
-
+                OrderSummaryScreen(
+                    orderUiState = uiState,
+                    modifier = Modifier.fillMaxHeight()
+                )
             }
 
         }
