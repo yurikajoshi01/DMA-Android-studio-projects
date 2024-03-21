@@ -62,12 +62,13 @@ enum class CupcakeScreen(@StringRes val title: Int){
  */
 @Composable
 fun CupcakeAppBar(
+    currentScreen: CupcakeScreen,
     canNavigateBack: Boolean,
     navigateUp: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     TopAppBar(
-        title = { Text(stringResource(id = R.string.app_name)) },
+        title = { Text(stringResource(currentScreen.title)) },
         colors = TopAppBarDefaults.mediumTopAppBarColors(
             containerColor = MaterialTheme.colorScheme.primaryContainer
         ),
