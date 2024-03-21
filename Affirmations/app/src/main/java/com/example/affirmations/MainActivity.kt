@@ -9,6 +9,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.affirmations.model.Affirmation
 import com.example.affirmations.ui.theme.AffirmationsTheme
 
 class MainActivity : ComponentActivity() {
@@ -35,6 +36,11 @@ fun MainPage(modifier: Modifier = Modifier) {
 
 @Composable
 fun AffirmationsApp(){
+}
+
+@Composable
+fun AffirmationCard(){
+
 }
 
 @Preview(showBackground = true,
