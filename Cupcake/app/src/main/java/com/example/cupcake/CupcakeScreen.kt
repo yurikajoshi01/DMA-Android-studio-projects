@@ -104,6 +104,10 @@ fun CupcakeApp(
                         .fillMaxSize()
                         .padding(dimensionResource(R.dimen.padding_medium)))
             }
+
+            composable(route = CupcakeScreen.Flavor.name){
+
+            }
         }
     }
 }
