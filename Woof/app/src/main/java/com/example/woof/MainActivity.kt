@@ -171,7 +171,7 @@ fun DogInformation(
  *Composable displaying the brand logo image
  */
 
-@OptIn(ExperimentalMaterial3Api::class)
+
 @Composable
 fun WoofTopAppBar (modifier: Modifier = Modifier) {
     CenterAlignedTopAppBar(
@@ -183,6 +183,10 @@ fun WoofTopAppBar (modifier: Modifier = Modifier) {
                         .padding(dimensionResource(id = R.dimen.padding_small)),
                     painter = painterResource(R.drawable.ic_woof_logo),
                     contentDescription = null
+                )
+                Text(
+                    text = stringResource(R.string.app_name),
+                    style = MaterialTheme.typography.displayLarge
                 )
             }
         },
