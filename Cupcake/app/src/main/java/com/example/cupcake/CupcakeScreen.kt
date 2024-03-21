@@ -138,6 +138,7 @@ fun CupcakeApp(
             }
 
             composable(route = CupcakeScreen.Summary.name) {
+                val context = LocalContext.current
                 OrderSummaryScreen(
                     orderUiState = uiState,
                     onCancelButtonClicked = {cancelOrderAndNavigateToStart(viewModel, navController)},
