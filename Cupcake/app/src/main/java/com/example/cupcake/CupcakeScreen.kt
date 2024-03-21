@@ -35,6 +35,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.cupcake.ui.OrderViewModel
 import androidx.navigation.compose.NavHost
 import androidx.compose.foundation.layout.padding
+import androidx.navigation.compose.composable
 
 enum class CupcakeScreen(){
     Start,
@@ -92,7 +93,9 @@ fun CupcakeApp(
             modifier = Modifier.padding(innerPadding)
 
         ){
+            composable( route = CupcakeScreen.Start.name){
 
+            }
         }
     }
 }
