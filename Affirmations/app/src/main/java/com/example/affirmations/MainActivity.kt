@@ -69,6 +69,11 @@ fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier){
     }
 }
 
+@Composable
+fun AffirmationList(AffirmationList: List<Affirmation>){
+
+}
+
 @Preview
 @Composable
 private fun AffirmationCardPreview(){
@@ -76,6 +81,5 @@ private fun AffirmationCardPreview(){
 }
 
 
-}
 
 
