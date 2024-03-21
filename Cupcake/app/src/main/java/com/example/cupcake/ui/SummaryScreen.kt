@@ -48,6 +48,7 @@ import com.example.cupcake.ui.components.FormattedPriceLabel
 fun OrderSummaryScreen(
     orderUiState: OrderUiState,
     onCancelButtonClicked: () -> Unit,
+    onSendButtonClicked: (String, String) -> Unit,
     modifier: Modifier = Modifier
 ){
     val resources = LocalContext.current.resources
