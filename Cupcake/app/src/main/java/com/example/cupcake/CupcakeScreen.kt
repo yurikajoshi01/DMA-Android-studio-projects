@@ -140,6 +140,10 @@ fun CupcakeApp(
             composable(route = CupcakeScreen.Summary.name) {
                 OrderSummaryScreen(
                     orderUiState = uiState,
+                    onCancelButtonClicked = {},
+                    onSendButtonClicked = { subject: String, summary: String ->
+
+                    },
                     modifier = Modifier.fillMaxHeight()
                 )
             }
