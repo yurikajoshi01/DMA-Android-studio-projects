@@ -34,6 +34,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.cupcake.ui.OrderViewModel
 import androidx.navigation.compose.NavHost
+import androidx.compose.foundation.layout.padding
 
 enum class CupcakeScreen(){
     Start,
@@ -85,6 +86,13 @@ fun CupcakeApp(
         }
     ) { innerPadding ->
         val uiState by viewModel.uiState.collectAsState()
-        NavHost()
+        NavHost(
+            navController = navController,
+            startDestination = CupcakeScreen.Start.name,
+            modifier = Modifier.padding(innerPadding)
+
+        ){
+
+        }
     }
 }
