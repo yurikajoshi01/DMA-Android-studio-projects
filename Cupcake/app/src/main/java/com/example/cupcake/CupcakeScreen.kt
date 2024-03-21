@@ -47,11 +47,14 @@ import com.example.cupcake.data.DataSource.flavors
 import com.example.cupcake.ui.OrderSummaryScreen
 import android.content.Context
 import android.content.Intent
-enum class CupcakeScreen(){
-    Start,
-    Flavor,
-    Pickup,
-    Summary
+import androidx.annotation.StringRes
+
+
+enum class CupcakeScreen(@StringRes val title: Int){
+    Start(title = R.string.app_name),
+    Flavor(title = R.string.choose_flavor),
+    Pickup(title = R.string.choose_pickup_date),
+    Summary(title = R.string.order_summary)
 }
 
 /**
