@@ -116,6 +116,7 @@ fun SelectQuantityButton(
 fun StartOrderPreview(){
     StartOrderScreen(
         quantityOptions = DataSource.quantityOptions,
+        onNextButtonClicked = {},
         modifier = Modifier.fillMaxSize().padding(dimensionResource(R.dimen.padding_medium))
     )
 }
