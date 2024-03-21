@@ -151,3 +151,6 @@ fun CupcakeApp(
         }
     }
 }
+
+private fun cancelOrderAndNavigateToStart() {
+}
