@@ -39,7 +39,7 @@ fun AffirmationsApp(){
 }
 
 @Composable
-fun AffirmationCard(affirmation: Affirmation){
+fun AffirmationCard(affirmation: Affirmation, modifier: Modifier){
 
 }
 
