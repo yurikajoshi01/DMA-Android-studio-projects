@@ -33,6 +33,10 @@ fun MainPage(modifier: Modifier = Modifier) {
 
 }
 
+@Composable
+fun AffirmationsApp(){
+}
+
 @Preview(showBackground = true,
     showSystemUi = true,
     name = "My Preview")
