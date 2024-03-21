@@ -52,7 +52,7 @@ fun AffirmationsApp(){
 }
 
 @Composable
-fun AffirmationCard(affirmation: Affirmation, modifier: Modifier){
+fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier){
     Card(modifier = modifier){
         Column{
             Image(
@@ -72,6 +72,13 @@ fun AffirmationCard(affirmation: Affirmation, modifier: Modifier){
     }
 }
 
+@Preview
+@Composable
+private fun AffirmationCardPreview(){
+    AffirmationCard(Affirmation(R.string.affirmation1, R.drawable.image1))
+}
+
+
 @Preview(showBackground = true,
     showSystemUi = true,
     name = "My Preview")
@@ -82,9 +89,4 @@ fun AffirmationsPreview() {
     }
 }
 
-@Preview
-@Composable
-private fun AffirmationCardPreview(){
-
-}
 
