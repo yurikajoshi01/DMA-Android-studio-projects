@@ -109,7 +109,12 @@ fun CupcakeApp(
 
             composable(route = CupcakeScreen.Flavor.name){
                 val context = LocalContext.current
-                SelectOptionScreen()
+                SelectOptionScreen(
+                    subtotal = uiState.price,
+                    options = DataSource.flavors.map { id -> context.resources.getString(id) },
+
+
+                )
             }
         }
     }
