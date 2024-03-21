@@ -48,6 +48,7 @@ import com.example.cupcake.ui.OrderSummaryScreen
 import android.content.Context
 import android.content.Intent
 import androidx.annotation.StringRes
+import androidx.navigation.compose.currentBackStackEntryAsState
 
 
 enum class CupcakeScreen(@StringRes val title: Int){
@@ -91,7 +92,7 @@ fun CupcakeApp(
     viewModel: OrderViewModel = viewModel(),
     navController: NavHostController = rememberNavController()
 ) {
-
+    val backStackEntry by navController.currentBackStackEntryAsState()
     Scaffold(
         topBar = {
             CupcakeAppBar(
