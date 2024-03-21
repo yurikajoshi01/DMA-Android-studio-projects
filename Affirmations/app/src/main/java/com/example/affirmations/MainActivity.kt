@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.affirmations.model.Affirmation
 import com.example.affirmations.ui.theme.AffirmationsTheme
+import androidx.compose.material3.Card
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +41,9 @@ fun AffirmationsApp(){
 
 @Composable
 fun AffirmationCard(affirmation: Affirmation, modifier: Modifier){
+    Card(modifier = modifier){
 
+    }
 }
 
 @Preview(showBackground = true,
