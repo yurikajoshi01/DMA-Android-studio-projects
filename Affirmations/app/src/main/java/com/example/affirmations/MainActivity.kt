@@ -35,17 +35,14 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MainPage()
+
                 }
             }
         }
     }
 }
 
-@Composable
-fun MainPage(modifier: Modifier = Modifier) {
 
-}
 
 @Composable
 fun AffirmationsApp(){
@@ -79,14 +76,6 @@ private fun AffirmationCardPreview(){
 }
 
 
-@Preview(showBackground = true,
-    showSystemUi = true,
-    name = "My Preview")
-@Composable
-fun AffirmationsPreview() {
-    AffirmationsTheme {
-        MainPage()
-    }
 }
 
 
