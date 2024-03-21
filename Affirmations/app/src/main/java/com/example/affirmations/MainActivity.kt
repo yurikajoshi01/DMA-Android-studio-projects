@@ -24,6 +24,7 @@ import androidx.compose.material3.Text
 import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.platform.LocalContext
 
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -80,3 +81,10 @@ fun AffirmationsPreview() {
         MainPage()
     }
 }
+
+@Preview
+@Composable
+private fun AffirmationCardPreview(){
+
+}
+
