@@ -159,6 +159,14 @@ fun DogInformation(
 }
 
 /**
+ *Composable displaying the brand logo image
+ */
+@Composable
+fun WoofTopAppBar (modifier: Modifier = Modifier){
+
+}
+
+/**
  * Composable that displays what the UI of the app looks like in light theme in the design tab.
  */
 @Preview
