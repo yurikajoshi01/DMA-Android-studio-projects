@@ -45,7 +45,7 @@ import com.example.cupcake.ui.SelectOptionScreen
 import androidx.compose.foundation.layout.fillMaxHeight
 import com.example.cupcake.data.DataSource.flavors
 import com.example.cupcake.ui.OrderSummaryScreen
-
+import android.content.Context
 
 enum class CupcakeScreen(){
     Start,
@@ -150,6 +150,10 @@ fun CupcakeApp(
 
         }
     }
+}
+
+private fun shareOrder(context: Context, subject: String, summary: String) {
+
 }
 
 private fun cancelOrderAndNavigateToStart( viewModel: OrderViewModel,
