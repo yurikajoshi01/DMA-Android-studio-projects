@@ -68,7 +68,9 @@ fun WoofApp() {
     Scaffold {it ->
         LazyColumn (contentPadding = it){
             items(dogs) {
-                DogItem(dog = it)
+                DogItem(dog = it,
+                        modifier = Modifier.padding(dimensionResource(R.dimen.padding_small))
+                    )
 
             }
         }
