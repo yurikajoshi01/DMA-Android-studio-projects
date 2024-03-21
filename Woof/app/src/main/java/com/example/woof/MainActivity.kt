@@ -168,5 +168,7 @@ fun WoofPreview() {
 @Preview
 @Composable
 fun woofDarkThemePreview(){
+    WoofTheme(darkTheme = true){
 
+    }
 }
