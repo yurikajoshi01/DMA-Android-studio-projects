@@ -47,6 +47,7 @@ import com.example.woof.data.Dog
 import com.example.woof.data.dogs
 import com.example.woof.ui.theme.WoofTheme
 import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
 
 
 class MainActivity : ComponentActivity() {
@@ -169,9 +170,13 @@ fun DogInformation(
  */
 
 @Composable
-fun WoofTopAppBar (modifier: Modifier = Modifier){
+fun WoofTopAppBar (modifier: Modifier = Modifier) {
     CenterAlignedTopAppBar(
+        title = {
+            Row() {
 
+            }
+        },
         modifier = modifier
     )
 }
