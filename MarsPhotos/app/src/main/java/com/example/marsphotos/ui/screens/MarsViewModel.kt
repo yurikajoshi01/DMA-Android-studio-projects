@@ -21,8 +21,16 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.marsphotos.network.MarsApi
+import com.example.marsphotos.network.MarsApiService
 import kotlinx.coroutines.launch
 import java.io.IOException
+
+
+sealed interface MarsUiState{
+    data class Success(val photos: String): MarsUiState
+    object Error: MarsUiState
+    object Loading: MarsUiState
+}
 
 class MarsViewModel : ViewModel() {
     /** The mutable State that stores the status of the most recent request */
