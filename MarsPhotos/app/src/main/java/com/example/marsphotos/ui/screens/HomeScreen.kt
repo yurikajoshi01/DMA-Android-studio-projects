@@ -16,6 +16,7 @@
 package com.example.marsphotos.ui.screens
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -24,12 +25,22 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.marsphotos.R
 import com.example.marsphotos.ui.theme.MarsPhotosTheme
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.fillMaxSize
 
 @Composable
 fun HomeScreen(
-    marsUiState: String, modifier: Modifier = Modifier
+    marsUiState: MarsUiState,
+    modifier: Modifier = Modifier
 ) {
-    ResultScreen(marsUiState, modifier)
+    when (marsUiState) {
+        is MarsUiState.Loading -> LoadingScreen(modifier = modifier.fillMaxSize())
+        is MarsUiState.Success -> ResultScreen(
+            marsUiState.photos, modifier = modifier.fillMaxWidth()
+        )
+
+        is MarsUiState.Error -> ErrorScreen( modifier = modifier.fillMaxSize())
+    }
 }
 
 /**
