@@ -10,5 +10,5 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface MarsApiService{
-
+    fun getPhotos()
 }
