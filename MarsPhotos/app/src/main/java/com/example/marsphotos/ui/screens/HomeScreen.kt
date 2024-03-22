@@ -27,6 +27,10 @@ import com.example.marsphotos.R
 import com.example.marsphotos.ui.theme.MarsPhotosTheme
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.Image
 
 @Composable
 fun HomeScreen(
@@ -41,6 +45,14 @@ fun HomeScreen(
 
         is MarsUiState.Error -> ErrorScreen( modifier = modifier.fillMaxSize())
     }
+}
+@Composable
+fun LoadingScreen(modifier: Modifier = Modifier) {
+    Image(
+        modifier = modifier.size(200.dp),
+        painter = painterResource(R.drawable.loading_img),
+        contentDescription = stringResource(R.string.loading)
+    )
 }
 
 /**
