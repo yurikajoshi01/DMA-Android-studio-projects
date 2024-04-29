@@ -55,13 +55,13 @@ val dancingScriptFamily = FontFamily(Font(R.font.dancing_script))
 
 @Composable
 fun GreetingText(message: String, from: String, modifier:Modifier = Modifier){
-    Column( verticalArrangement = Arrangement.Center,
+    Column( verticalArrangement = Arrangement.Bottom,
             modifier = modifier
     ) {
         Text(
             text = message,
-            fontSize = 100.sp,
-            lineHeight = 116.sp,
+            fontSize = 90.sp,
+            lineHeight = 92.sp,
             textAlign = TextAlign.Center,
             color = Color.White,
             fontFamily = dancingScriptFamily
@@ -70,11 +70,11 @@ fun GreetingText(message: String, from: String, modifier:Modifier = Modifier){
         Text(
             text = from,
             color = Color.White,
-            fontSize = 36.sp,
+            fontSize = 24.sp,
             fontFamily = dancingScriptFamily,
             modifier = Modifier
-                .padding(16.dp)
-                .align(alignment = Alignment.End)
+                .padding(top = 40.dp, bottom = 26.dp)
+                .align(alignment = Alignment.CenterHorizontally)
         )
     }
 }
