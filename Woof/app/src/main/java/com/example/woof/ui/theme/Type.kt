@@ -24,15 +24,6 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.sp
 
 
-val AbrilFatface = FontFamily(
-    Font(R.font.abril_fatface_regular)
-)
-
-val Montserrat = FontFamily(
-    Font(R.font.montserrat_regular),
-    Font(R.font.montserrat_bold, FontWeight.Bold)
-)
-
 val Caveat = FontFamily(
     Font(R.font.caveat_regular),
     Font(R.font.caveat_bold, FontWeight.Bold)
@@ -43,8 +34,41 @@ val Pacifico = FontFamily(
 
 )
 
-
 // Set of Material typography styles to start with
+val Typography = Typography(
+    displayLarge = TextStyle(
+        fontFamily = Pacifico,
+        fontWeight = FontWeight.Bold,
+        fontSize = 36.sp
+    ),
+    displayMedium = TextStyle(
+        fontFamily = Caveat,
+        fontWeight = FontWeight.Bold,
+        fontSize = 20.sp
+    ),
+    labelSmall = TextStyle(
+        fontFamily = Caveat,
+        fontWeight = FontWeight.Bold,
+        fontSize = 14.sp
+    ),
+    bodyLarge = TextStyle(
+        fontFamily = Caveat,
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp
+    )
+)
+
+
+/*
+//old fonts
+val AbrilFatface = FontFamily(
+    Font(R.font.abril_fatface_regular)
+)
+
+val Montserrat = FontFamily(
+    Font(R.font.montserrat_regular),
+    Font(R.font.montserrat_bold, FontWeight.Bold)
+)
 val Typography = Typography(
     displayLarge = TextStyle(
         fontFamily = AbrilFatface,
@@ -67,4 +91,4 @@ val Typography = Typography(
         fontSize = 14.sp
     )
 )
-
+*/
