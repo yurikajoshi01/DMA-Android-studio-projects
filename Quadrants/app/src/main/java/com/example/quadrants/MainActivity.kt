@@ -55,13 +55,13 @@ fun ComposeQuadrants(){
             CardMessage(
                 color = Color(0xFFEADDFF),
                 imageResId = R.drawable.belgium,
-                topic = stringResource(R.string.belgium_flag),
+                countryname = stringResource(R.string.belgium_flag),
                 modifier = Modifier.weight(1f)
             )
             CardMessage(
                 color = Color(0xFFD0BCFF),
                 imageResId = R.drawable.malaysia,
-                topic = stringResource(R.string.malaysia_flag),
+                countryname = stringResource(R.string.malaysia_flag),
                 modifier = Modifier.weight(1f)
             )
         }
@@ -70,13 +70,13 @@ fun ComposeQuadrants(){
             CardMessage(
                 color = Color(0xFFB69DF8),
                 imageResId = R.drawable.tanzania,
-                topic = stringResource(R.string.tanzania_flag),
+                countryname = stringResource(R.string.tanzania_flag),
                 modifier = Modifier.weight(1f)
             )
             CardMessage(
                 color = Color(0xFFF6EDFF),
                 imageResId = R.drawable.peru,
-                topic = stringResource(R.string.peru_flag),
+                countryname = stringResource(R.string.peru_flag),
                 modifier = Modifier.weight(1f)
             )
         }
@@ -85,7 +85,7 @@ fun ComposeQuadrants(){
 }
 
 @Composable
-fun CardMessage(topic: String, modifier: Modifier = Modifier, color: Color, imageResId: Int){
+fun CardMessage(countryname: String, modifier: Modifier = Modifier, color: Color, imageResId: Int){
     Column (modifier = modifier
         .background(color)
         .padding(16.dp)
@@ -97,17 +97,18 @@ fun CardMessage(topic: String, modifier: Modifier = Modifier, color: Color, imag
     ){
         Image(
             painter = painterResource(id = imageResId),
-            contentDescription = topic,
+            contentDescription = countryname,
             modifier = Modifier
-                .aspectRatio(1.2f)
+                .aspectRatio(1.4f)
                 .fillMaxWidth(),
             contentScale = ContentScale.FillBounds
 
         )
 
         Text(
-            text = topic,
+            text = countryname,
             fontWeight = FontWeight.Bold,
+            fontSize = 28.sp,
             lineHeight = 16.sp,
             modifier = Modifier.padding(16.dp)
 
