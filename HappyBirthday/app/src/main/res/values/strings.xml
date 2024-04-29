@@ -2,4 +2,6 @@
     <string name="app_name">Happy Birthday</string>
     <string name="happy_birthday_text">Happy Birthday DMA!</string>
     <string name="signature_text">From Everybody!</string>
+    <string name="merry_christmas_text">Merry Christmas</string>
+    <string name="signature_lbu_text">From Leeds Beckett Computing</string>
 </resources>
