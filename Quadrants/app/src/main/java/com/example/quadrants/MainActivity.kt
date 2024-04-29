@@ -25,6 +25,9 @@ import com.example.quadrants.ui.theme.QuadrantsTheme
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.height
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.sp
 
@@ -96,7 +99,10 @@ fun CardMessage(topic: String, modifier: Modifier = Modifier, color: Color, imag
             painter = painterResource(id = imageResId),
             contentDescription = topic,
             modifier = Modifier
-                .fillMaxWidth()
+                .aspectRatio(1.2f)
+                .fillMaxWidth(),
+            contentScale = ContentScale.FillBounds
+
         )
 
         Text(
