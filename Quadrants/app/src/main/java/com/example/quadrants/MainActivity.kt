@@ -52,14 +52,12 @@ fun ComposeQuadrants(){
                 color = Color(0xFFEADDFF),
                 imageResId = R.drawable.malaysia,
                 topic = stringResource(R.string.first_title),
-                description = stringResource(R.string.first_description),
                 modifier = Modifier.weight(1f)
             )
             CardMessage(
                 color = Color(0xFFD0BCFF),
                 imageResId = R.drawable.malaysia,
                 topic = stringResource(R.string.second_title),
-                description = stringResource(R.string.second_description),
                 modifier = Modifier.weight(1f)
             )
         }
@@ -69,14 +67,12 @@ fun ComposeQuadrants(){
                 color = Color(0xFFB69DF8),
                 imageResId = R.drawable.malaysia,
                 topic = stringResource(R.string.third_title),
-                description = stringResource(R.string.third_description),
                 modifier = Modifier.weight(1f)
             )
             CardMessage(
                 color = Color(0xFFF6EDFF),
                 imageResId = R.drawable.malaysia,
                 topic = stringResource(R.string.fourth_title),
-                description = stringResource(R.string.fourth_description),
                 modifier = Modifier.weight(1f)
             )
         }
@@ -85,7 +81,7 @@ fun ComposeQuadrants(){
 }
 
 @Composable
-fun CardMessage(topic: String, description: String, modifier: Modifier = Modifier, color: Color, imageResId: Int){
+fun CardMessage(topic: String, modifier: Modifier = Modifier, color: Color, imageResId: Int){
     Column (modifier = modifier
         .background(color)
         .padding(16.dp)
@@ -110,10 +106,6 @@ fun CardMessage(topic: String, description: String, modifier: Modifier = Modifie
 
         )
 
-        Text(
-            text = description,
-            textAlign = TextAlign.Justify
-        )
     }
 }
 
