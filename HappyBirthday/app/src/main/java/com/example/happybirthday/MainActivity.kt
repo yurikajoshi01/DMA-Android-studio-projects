@@ -25,6 +25,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +49,10 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+//defined a font family for dancing_script
+val dancingScriptFamily = FontFamily(Font(R.font.dancing_script))
+
+
 @Composable
 fun GreetingText(message: String, from: String, modifier:Modifier = Modifier){
     Column( verticalArrangement = Arrangement.Center,
@@ -57,13 +63,15 @@ fun GreetingText(message: String, from: String, modifier:Modifier = Modifier){
             fontSize = 100.sp,
             lineHeight = 116.sp,
             textAlign = TextAlign.Center,
-            color = Color.White
+            color = Color.White,
+            fontFamily = dancingScriptFamily
 
         )
         Text(
             text = from,
             color = Color.White,
             fontSize = 36.sp,
+            fontFamily = dancingScriptFamily,
             modifier = Modifier
                 .padding(16.dp)
                 .align(alignment = Alignment.End)
