@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.foundation.Image
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.sp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,14 +51,14 @@ fun ComposeQuadrants(){
         Row(Modifier.weight(1f)) {
             CardMessage(
                 color = Color(0xFFEADDFF),
-                imageResId = R.drawable.malaysia,
-                topic = stringResource(R.string.first_title),
+                imageResId = R.drawable.belgium,
+                topic = stringResource(R.string.belgium_flag),
                 modifier = Modifier.weight(1f)
             )
             CardMessage(
                 color = Color(0xFFD0BCFF),
                 imageResId = R.drawable.malaysia,
-                topic = stringResource(R.string.second_title),
+                topic = stringResource(R.string.malaysia_flag),
                 modifier = Modifier.weight(1f)
             )
         }
@@ -65,14 +66,14 @@ fun ComposeQuadrants(){
         Row(Modifier.weight(1f)) {
             CardMessage(
                 color = Color(0xFFB69DF8),
-                imageResId = R.drawable.malaysia,
-                topic = stringResource(R.string.third_title),
+                imageResId = R.drawable.tanzania,
+                topic = stringResource(R.string.tanzania_flag),
                 modifier = Modifier.weight(1f)
             )
             CardMessage(
                 color = Color(0xFFF6EDFF),
-                imageResId = R.drawable.malaysia,
-                topic = stringResource(R.string.fourth_title),
+                imageResId = R.drawable.peru,
+                topic = stringResource(R.string.peru_flag),
                 modifier = Modifier.weight(1f)
             )
         }
@@ -102,7 +103,8 @@ fun CardMessage(topic: String, modifier: Modifier = Modifier, color: Color, imag
         Text(
             text = topic,
             fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(bottom = 16.dp)
+            lineHeight = 16.sp,
+            modifier = Modifier.padding(16.dp)
 
         )
 
