@@ -96,7 +96,6 @@ fun CardMessage(topic: String, modifier: Modifier = Modifier, color: Color, imag
             painter = painterResource(id = imageResId),
             contentDescription = topic,
             modifier = Modifier
-                .weight(1f) // Use weight to allocate a portion of the column space to the image
                 .fillMaxWidth()
         )
 
