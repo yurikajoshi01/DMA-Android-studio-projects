@@ -28,6 +28,12 @@ import androidx.compose.foundation.lazy.items
 import com.example.affirmations.data.Datasource
 import androidx.compose.foundation.clickable
 import android.widget.Toast
+import androidx.compose.material3.AlertDialog
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+
 
 
 class MainActivity : ComponentActivity() {
@@ -59,8 +65,15 @@ fun AffirmationsApp() {
 @Composable
 fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier){
     val context = LocalContext.current
+    var showDialogbox by remember {mutableStateOf(false)}
+
+    if (showDialogbox){
+
+    }
+
     Card(modifier = modifier.clickable {
-        Toast.makeText(context, context.getString(affirmation.stringResourceId), Toast.LENGTH_SHORT).show()
+       // Toast.makeText(context, context.getString(affirmation.stringResourceId), Toast.LENGTH_SHORT).show()
+        showDialogbox = true
     }){
         Column{
             Image(
