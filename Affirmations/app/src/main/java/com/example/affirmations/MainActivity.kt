@@ -33,6 +33,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.window.Dialog
 
 
 
@@ -73,7 +74,21 @@ fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier){
                 showDialogbox = false
             },
             text = {
-                Text(text = context.getString(affirmation.stringResourceId))
+
+                    Column {
+                        Image(
+                            painter = painterResource(id = affirmation.imageResourceId),
+                            contentDescription = stringResource(id = affirmation.stringResourceId),
+                            modifier = Modifier.fillMaxWidth().height(194.dp),
+                            contentScale = ContentScale.Crop
+                        )
+                        Text(
+                            text = context.getString(affirmation.stringResourceId),
+                            modifier = Modifier.padding(16.dp),
+                            style = MaterialTheme.typography.headlineSmall
+                        )
+                    }
+
             },
             confirmButton = {}
         )
@@ -81,7 +96,7 @@ fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier){
     }
 
     Card(modifier = modifier.clickable {
-       // Toast.makeText(context, context.getStriDng(affirmation.stringResourceId), Toast.LENGTH_SHORT).show()
+       // Toast.makeText(context, context.getString(affirmation.stringResourceId), Toast.LENGTH_SHORT).show()
         showDialogbox = true
     }){
         Column{
@@ -117,6 +132,38 @@ fun AffirmationList(affirmationList: List<Affirmation>, modifier: Modifier = Mod
 @Composable
 private fun AffirmationCardPreview(){
     AffirmationCard(Affirmation(R.string.affirmation1, R.drawable.image1))
+}
+
+@Composable
+fun CustomDialog(
+    onDismissRequest: () -> Unit,
+    affirmation: Affirmation
+) {
+    val context = LocalContext.current
+
+    Dialog(onDismissRequest = { onDismissRequest() }) {
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)  // This adds padding around the card within the dialog
+        ) {
+            Column {
+                Image(
+                    painter = painterResource(id = affirmation.imageResourceId),
+                    contentDescription = stringResource(id = affirmation.stringResourceId),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(194.dp),  // Adjust the height as needed
+                    contentScale = ContentScale.Crop  // Ensures the image fills the width and crops excess height
+                )
+                Text(
+                    text = context.getString(affirmation.stringResourceId),
+                    modifier = Modifier.padding(16.dp),
+                    style = MaterialTheme.typography.headlineSmall  // Style the text according to your theme
+                )
+            }
+        }
+    }
 }
 
 @Preview(showBackground = true,
