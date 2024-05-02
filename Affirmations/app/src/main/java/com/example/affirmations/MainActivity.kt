@@ -26,6 +26,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import com.example.affirmations.data.Datasource
+import androidx.compose.foundation.clickable
+import android.widget.Toast
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,7 +58,10 @@ fun AffirmationsApp() {
 
 @Composable
 fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier){
-    Card(modifier = modifier){
+    val context = LocalContext.current
+    Card(modifier = modifier.clickable {
+        Toast.makeText(context, context.getString(affirmation.stringResourceId), Toast.LENGTH_SHORT).show()
+    }){
         Column{
             Image(
                 painter = painterResource(affirmation.imageResourceId),
