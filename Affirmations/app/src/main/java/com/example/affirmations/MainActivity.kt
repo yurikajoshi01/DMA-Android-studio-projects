@@ -68,11 +68,20 @@ fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier){
     var showDialogbox by remember {mutableStateOf(false)}
 
     if (showDialogbox){
+        AlertDialog(
+            onDismissRequest = {
+                showDialogbox = false
+            },
+            text = {
+                Text(text = context.getString(affirmation.stringResourceId))
+            },
+            confirmButton = {}
+        )
 
     }
 
     Card(modifier = modifier.clickable {
-       // Toast.makeText(context, context.getString(affirmation.stringResourceId), Toast.LENGTH_SHORT).show()
+       // Toast.makeText(context, context.getStriDng(affirmation.stringResourceId), Toast.LENGTH_SHORT).show()
         showDialogbox = true
     }){
         Column{
