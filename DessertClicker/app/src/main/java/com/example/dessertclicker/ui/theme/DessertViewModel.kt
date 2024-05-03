@@ -16,14 +16,25 @@ class DessertViewModel : ViewModel() {
     fun onDessertClicked() {
         _dessertUiState.update { cupcakeUiState ->
             val dessertsSold = cupcakeUiState.dessertsSold + 1
-            val nextDessertIndex = { }
+            val nextDessertIndexToShow = determineDessertIndexToShow(dessertsSold)
             cupcakeUiState.copy(
-                currentDessertIndex = nextDessertIndex,
+                currentDessertIndex = nextDessertIndexToShow,
                 revenue = cupcakeUiState.revenue + cupcakeUiState.currentDessertPrice,
                 dessertsSold = dessertsSold,
-                currentDessertImageId = dessertList[nextDessertIndex].imageId,
-                currentDessertPrice = dessertList[nextDessertIndex].price
+                currentDessertImageId = dessertList[nextDessertIndexToShow].imageId,
+                currentDessertPrice = dessertList[nextDessertIndexToShow].price
             )
+            }
         }
-    }
+        private fun determineDessertIndexToShow(dessertsSold: Int): Int {
+            var dessertIndex = 0
+            for (index in dessertList.indices) {
+                if (dessertsSold >= dessertList[index].startProductionAmount) {
+                    dessertIndex = index
+                } else {
+                    break
+                }
+            }
+            return dessertIndex
+        }
 }
