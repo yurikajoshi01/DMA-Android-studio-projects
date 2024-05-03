@@ -63,9 +63,11 @@ import com.example.dessertclicker.data.Datasource
 import com.example.dessertclicker.model.Dessert
 import com.example.dessertclicker.ui.theme.DessertClickerTheme
 import android.util.Log
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.saveable.rememberSaveable
 import com.example.dessertclicker.data.DessertUiState
-
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.dessertclicker.ui.theme.DessertViewModel
 
 /**
  * Tag for logging purpose
@@ -168,6 +170,17 @@ private fun shareSoldDessertsInformation(intentContext: Context, dessertsSold: I
         ).show()
     }
 }
+
+@Composable
+private fun DessertClickerApp(
+    viewModel: DessertViewModel = viewModel()) {
+    val uiState by viewModel.dessertUiState.collectAsState()
+    DessertClickerApp(
+        uiState = uiState,
+        onDessertClicked = viewModel::onDessertClicked
+    )
+}
+
 
 @Composable
 private fun DessertClickerApp(
