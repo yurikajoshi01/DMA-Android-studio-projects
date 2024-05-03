@@ -64,6 +64,7 @@ import com.example.dessertclicker.model.Dessert
 import com.example.dessertclicker.ui.theme.DessertClickerTheme
 import android.util.Log
 import androidx.compose.runtime.saveable.rememberSaveable
+import com.example.dessertclicker.data.DessertUiState
 
 
 /**
@@ -170,21 +171,11 @@ private fun shareSoldDessertsInformation(intentContext: Context, dessertsSold: I
 
 @Composable
 private fun DessertClickerApp(
-    desserts: List<Dessert>
+    uiState: DessertUiState,
+    onDessertClicked: () -> Unit,
+    modifier: Modifier = Modifier
+
 ) {
-
-    var revenue by rememberSaveable { mutableStateOf(0) }
-    var dessertsSold by rememberSaveable  { mutableStateOf(0) }
-
-    val currentDessertIndex by rememberSaveable  { mutableStateOf(0) }
-
-    var currentDessertPrice by rememberSaveable  {
-        mutableStateOf(desserts[currentDessertIndex].price)
-    }
-    var currentDessertImageId by rememberSaveable  {
-        mutableStateOf(desserts[currentDessertIndex].imageId)
-    }
-
     Scaffold(
         topBar = {
             val intentContext = LocalContext.current
@@ -192,8 +183,8 @@ private fun DessertClickerApp(
                 onShareButtonClicked = {
                     shareSoldDessertsInformation(
                         intentContext = intentContext,
-                        dessertsSold = dessertsSold,
-                        revenue = revenue
+                        dessertsSold = uiState.dessertsSold,
+                        revenue = uiState.revenue
                     )
                 },
                 modifier = Modifier
@@ -203,9 +194,9 @@ private fun DessertClickerApp(
         }
     ) { contentPadding ->
         DessertClickerScreen(
-            revenue = revenue,
-            dessertsSold = dessertsSold,
-            dessertImageId = currentDessertImageId,
+            revenue = uiState.revenue,
+            dessertsSold = uiState.dessertsSold,
+            dessertImageId = uiState.currentDessertImageId,
             onDessertClicked = {
 
                 // Update the revenue
