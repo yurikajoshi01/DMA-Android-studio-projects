@@ -63,6 +63,8 @@ fun DiceRollerApp() {
 fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
     var result1 by rememberSaveable { mutableStateOf(1) }
     var result2 by rememberSaveable { mutableStateOf(1) }
+    var showDoubleRollMessage by rememberSaveable { mutableStateOf(false) }
+
     fun getImageResource (result: Int) = when (result) {
         1 -> R.drawable.dice_1
         2 -> R.drawable.dice_2
