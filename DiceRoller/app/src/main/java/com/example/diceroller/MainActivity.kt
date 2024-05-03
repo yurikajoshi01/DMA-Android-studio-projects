@@ -21,6 +21,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.width
 import androidx.compose.ui.unit.dp
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
@@ -60,7 +61,8 @@ fun DiceRollerApp() {
 
 @Composable
 fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
-    var result by rememberSaveable { mutableStateOf(1) }
+    var result1 by rememberSaveable { mutableStateOf(1) }
+    var result2 by rememberSaveable { mutableStateOf(1) }
     fun getImageResource (result: Int) = when (result) {
         1 -> R.drawable.dice_1
         2 -> R.drawable.dice_2
@@ -74,15 +76,24 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-        Image(
-            painter = painterResource(id = imageResource),
-            contentDescription = result.toString()
-        )
-        Spacer(modifier = Modifier.height(16.dp))
-    }
-        Button(onClick = { result = (1..6).random()}) {
-            Text(stringResource(R.string.roll))
+            Image(
+                painter = painterResource(id = getImageResource(result1)),
+                contentDescription = "Dice $result1"
+            )
+            Spacer(modifier = Modifier.width(16.dp))
+            Image(
+                painter = painterResource(id = getImageResource(result2)),
+                contentDescription = "Dice $result2"
+            )
         }
+        Spacer(modifier = Modifier.height(16.dp))
+        Button(onClick = {
+            result1 = (1..6).random()
+            result2 = (1..6).random()
+        }) {
+            Text("Roll")
+        }
+
     }
 
 }
