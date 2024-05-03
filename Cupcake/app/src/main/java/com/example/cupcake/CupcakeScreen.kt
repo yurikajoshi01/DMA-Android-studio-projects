@@ -138,6 +138,9 @@ fun CupcakeApp(
                 )
             }
 
+            composable(route = CupcakeScreen.Topping.name) {
+
+            }
 
             composable(route = CupcakeScreen.Pickup.name) {
                 SelectOptionScreen(
