@@ -15,6 +15,7 @@
  */
 package com.example.cupcake.ui
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import com.example.cupcake.R
 import com.example.cupcake.data.OrderUiState
@@ -67,11 +68,24 @@ class OrderViewModel : ViewModel() {
         }
     }
 
-    fun setTopping(desiredTopping: String){
+    fun setTopping(context: Context, desiredToppingId: Int) {
+        val desiredTopping = context.resources.getString(desiredToppingId)
+        val toppingPrice = when (desiredTopping) {
+            context.getString(R.string.plain) -> 0.00
+            context.getString(R.string.cherry) -> 0.30
+            context.getString(R.string.powdered_sugar) -> 0.30
+            context.getString(R.string.sprinkles) -> 0.50
+            else -> 0.00
+        }
         _uiState.update { currentState ->
-            currentState.copy(topping = desiredTopping)
+            currentState.copy(
+                topping = desiredTopping,
+                price = calculatePrice(toppingPrice = toppingPrice)
+            )
         }
     }
+
+
 
     /**
      * Set the [pickupDate] for this order's state and update the price
