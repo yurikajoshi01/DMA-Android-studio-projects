@@ -130,7 +130,7 @@ fun CupcakeApp(
                 val context = LocalContext.current
                 SelectOptionScreen(
                     subtotal = uiState.price,
-                    onNextButtonClicked = { navController.navigate(CupcakeScreen.Pickup.name) },
+                    onNextButtonClicked = { navController.navigate(CupcakeScreen.Topping.name) },
                     onCancelButtonClicked = {cancelOrderAndNavigateToStart(viewModel, navController)},
                     options = DataSource.flavors.map { id -> context.resources.getString(id) },
                     onSelectionChanged = { viewModel.setFlavor(it) },
@@ -139,9 +139,14 @@ fun CupcakeApp(
             }
 
             composable(route = CupcakeScreen.Topping.name) {
+                val context = LocalContext.current
                 SelectOptionScreen(
                     subtotal = uiState.price,
-                    options = uiState.pickupOptions,
+                    onNextButtonClicked = { navController.navigate(CupcakeScreen.Pickup.name) },
+                    onCancelButtonClicked = {cancelOrderAndNavigateToStart(viewModel, navController)},
+                    options = DataSource.toppings.map { id -> context.resources.getString(id) },
+                    onSelectionChanged = { viewModel.setTopping(it) },
+                    modifier = Modifier.fillMaxHeight()
                 )
             }
 
