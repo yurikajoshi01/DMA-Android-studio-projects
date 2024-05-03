@@ -61,7 +61,7 @@ fun DiceRollerApp() {
 @Composable
 fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
     var result by rememberSaveable { mutableStateOf(1) }
-    val imageResource = when (result) {
+    fun getImageResource (result: Int) = when (result) {
         1 -> R.drawable.dice_1
         2 -> R.drawable.dice_2
         3 -> R.drawable.dice_3
