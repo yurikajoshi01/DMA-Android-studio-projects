@@ -139,7 +139,10 @@ fun CupcakeApp(
             }
 
             composable(route = CupcakeScreen.Topping.name) {
-
+                SelectOptionScreen(
+                    subtotal = uiState.price,
+                    options = uiState.pickupOptions,
+                )
             }
 
             composable(route = CupcakeScreen.Pickup.name) {
