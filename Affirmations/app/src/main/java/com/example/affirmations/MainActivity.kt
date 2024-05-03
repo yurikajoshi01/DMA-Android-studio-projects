@@ -32,6 +32,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 
 
@@ -137,7 +138,8 @@ fun CustomDialog(
                     Text(
                         text = context.getString(affirmation.stringResourceId),
                         modifier = Modifier.padding(16.dp),
-                        style = MaterialTheme.typography.headlineSmall
+                        style = MaterialTheme.typography.headlineSmall.copy(
+                            fontSize = 16.sp)
                     )
                 }
             }
