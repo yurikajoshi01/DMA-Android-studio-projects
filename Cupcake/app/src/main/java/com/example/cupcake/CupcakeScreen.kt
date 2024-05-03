@@ -54,6 +54,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 enum class CupcakeScreen(@StringRes val title: Int){
     Start(title = R.string.app_name),
     Flavor(title = R.string.choose_flavor),
+    Topping(title= R.string.choose_topping),
     Pickup(title = R.string.choose_pickup_date),
     Summary(title = R.string.order_summary)
 }
