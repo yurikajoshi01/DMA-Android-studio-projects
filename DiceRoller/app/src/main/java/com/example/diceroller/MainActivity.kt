@@ -27,6 +27,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.unit.sp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -92,9 +95,20 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
         Button(onClick = {
             result1 = (1..6).random()
             result2 = (1..6).random()
+            showDoubleRollMessage = result1 == result2
+
         }) {
             Text("Roll")
         }
+        if (showDoubleRollMessage && result1 == result2) {
+        Text(
+            "You rolled a double $result1",
+            style = TextStyle(
+                fontSize = 20.sp,
+                textDecoration = TextDecoration.Underline
+            )
+        )
+    }
 
     }
 
