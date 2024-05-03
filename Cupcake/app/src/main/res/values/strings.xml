@@ -30,6 +30,10 @@
     <string name="next">Next</string>
     <string name="topping">Topping</string>
     <string name="choose_topping">Choose Topping</string>
+    <string name="plain">Plain</string>
+    <string name="cherry">Cherry - $0.30 per Cupcake</string>
+    <string name="powdered_sugar">Powdered Sugar - $0.30 per Cupcake</string>
+    <string name="sprinkles">Sprinkles - $0.50 per Cupcake</string>
     <string name="choose_pickup_date">Choose Pickup Date</string>
     <string name="order_summary">Order Summary</string>
     <string name="send">Send Order to Another App</string>
