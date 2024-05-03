@@ -28,7 +28,6 @@ import androidx.compose.foundation.lazy.items
 import com.example.affirmations.data.Datasource
 import androidx.compose.foundation.clickable
 import android.widget.Toast
-import androidx.compose.material3.AlertDialog
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -69,7 +68,10 @@ fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier){
     var showDialogbox by remember {mutableStateOf(false)}
 
     if (showDialogbox){
-
+        CustomDialog(
+            onDismissRequest = { showDialogbox = false },
+            affirmation = affirmation
+        )
     }
 
     Card(modifier = modifier.clickable {
@@ -116,7 +118,30 @@ fun CustomDialog(
     onDismissRequest: () -> Unit,
     affirmation: Affirmation
 ) {
-
+        val context = LocalContext.current
+        Dialog(onDismissRequest = { onDismissRequest() }) {
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp)
+            ) {
+                Column {
+                    Image(
+                        painter = painterResource(id = affirmation.imageResourceId),
+                        contentDescription = stringResource(id = affirmation.stringResourceId),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(194.dp),
+                        contentScale = ContentScale.Crop
+                    )
+                    Text(
+                        text = context.getString(affirmation.stringResourceId),
+                        modifier = Modifier.padding(16.dp),
+                        style = MaterialTheme.typography.headlineSmall
+                    )
+                }
+            }
+        }
 }
 
 @Preview(showBackground = true,
