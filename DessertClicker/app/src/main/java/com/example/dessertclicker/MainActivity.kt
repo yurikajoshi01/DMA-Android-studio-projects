@@ -210,7 +210,7 @@ private fun DessertClickerApp(
             revenue = uiState.revenue,
             dessertsSold = uiState.dessertsSold,
             dessertImageId = uiState.currentDessertImageId,
-            onDessertClicked = {},
+            onDessertClicked = onDessertClicked,
             modifier = Modifier.padding(contentPadding)
         )
     }
