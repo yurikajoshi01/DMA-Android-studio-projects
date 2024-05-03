@@ -31,5 +31,7 @@ data class OrderUiState(
     /** Total price for the order */
     val price: String = "",
     /** Available pickup dates for the order*/
-    val pickupOptions: List<String> = listOf()
+    val pickupOptions: List<String> = listOf(),
+    /**Topping price per cupcake for the cupcakes initially set to 0.0 initially*/
+    val toppingPricePerCupcake: Double = 0.0,
 )

@@ -145,7 +145,7 @@ fun CupcakeApp(
                     onNextButtonClicked = { navController.navigate(CupcakeScreen.Pickup.name) },
                     onCancelButtonClicked = {cancelOrderAndNavigateToStart(viewModel, navController)},
                     options = DataSource.toppings.map { id -> context.resources.getString(id) },
-                    onSelectionChanged = { viewModel.setTopping(it) },
+                    onSelectionChanged = { viewModel.setTopping(it)},
                     modifier = Modifier.fillMaxHeight()
                 )
             }

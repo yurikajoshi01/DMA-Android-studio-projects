@@ -68,24 +68,26 @@ class OrderViewModel : ViewModel() {
         }
     }
 
-    fun setTopping(context: Context, desiredToppingId: Int) {
-        val desiredTopping = context.resources.getString(desiredToppingId)
-        val toppingPrice = when (desiredTopping) {
-            context.getString(R.string.plain) -> 0.00
-            context.getString(R.string.cherry) -> 0.30
-            context.getString(R.string.powdered_sugar) -> 0.30
-            context.getString(R.string.sprinkles) -> 0.50
+    fun setTopping(context: Context, desiredTopping: String){
+
+        val resources = context.resources
+
+        val toppingPricePerCupcake = when (desiredTopping) {
+            resources.getString(R.string.plain) -> 0.00
+            resources.getString(R.string.cherry) -> 0.30
+            resources.getString(R.string.powdered_sugar) -> 0.30
+            resources.getString(R.string.sprinkles) -> 0.50
             else -> 0.00
         }
         _uiState.update { currentState ->
             currentState.copy(
                 topping = desiredTopping,
-                price = calculatePrice(toppingPrice = toppingPrice)
+                price = calculatePrice(toppingPricePerCupcake = toppingPricePerCupcake),
+                toppingPricePerCupcake = toppingPricePerCupcake
             )
+
         }
     }
-
-
 
     /**
      * Set the [pickupDate] for this order's state and update the price
@@ -111,9 +113,12 @@ class OrderViewModel : ViewModel() {
      */
     private fun calculatePrice(
         quantity: Int = _uiState.value.quantity,
-        pickupDate: String = _uiState.value.date
+        pickupDate: String = _uiState.value.date,
+        toppingPricePerCupcake: Double = _uiState.value.toppingPricePerCupcake
     ): String {
         var calculatedPrice = quantity * PRICE_PER_CUPCAKE
+        //multiplying the quantity of cupcake with the price of topping per cupcake and adding it to the price of cupcake
+        calculatedPrice = calculatedPrice + (toppingPricePerCupcake * quantity)
         // If the user selected the first option (today) for pickup, add the surcharge
         if (pickupOptions()[0] == pickupDate) {
             calculatedPrice += PRICE_FOR_SAME_DAY_PICKUP
