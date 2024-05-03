@@ -17,6 +17,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Row
 import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.Spacer
@@ -72,11 +73,13 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
         Image(
             painter = painterResource(id = imageResource),
             contentDescription = result.toString()
         )
         Spacer(modifier = Modifier.height(16.dp))
+    }
         Button(onClick = { result = (1..6).random()}) {
             Text(stringResource(R.string.roll))
         }
