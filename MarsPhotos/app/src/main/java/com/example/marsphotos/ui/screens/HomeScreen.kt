@@ -34,6 +34,9 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.ui.platform.LocalContext
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 import com.example.marsphotos.model.MarsPhoto
 
 @Composable
@@ -87,6 +90,14 @@ fun ResultScreen(photos: String, modifier: Modifier = Modifier) {
 
 @Composable
 fun MarsPhotoCard(photo: MarsPhoto, modifier: Modifier = Modifier) {
+    AsyncImage(
+        model = ImageRequest.Builder(context = LocalContext.current)
+            .data(photo.imgSrc)
+            .build(),
+        contentDescription = stringResource(R.string.mars_photo),
+        modifier = Modifier.fillMaxWidth()
+    )
+
 }
 
 @Preview(showBackground = true)
