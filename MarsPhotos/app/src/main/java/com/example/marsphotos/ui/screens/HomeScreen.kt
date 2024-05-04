@@ -37,6 +37,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import coil.compose.AsyncImage
@@ -117,6 +118,9 @@ fun PhotosGridScreen(
         modifier = modifier.padding(horizontal = 4.dp),
         contentPadding = contentPadding,
     ) {
+        items(items = photos, key = { photo -> photo.id }) {
+                photo -> MarsPhotoCard(photo)
+        }
     }
 }
 
