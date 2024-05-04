@@ -34,6 +34,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import com.example.marsphotos.model.MarsPhoto
 
 @Composable
 fun HomeScreen(
@@ -84,6 +85,9 @@ fun ResultScreen(photos: String, modifier: Modifier = Modifier) {
     }
 }
 
+@Composable
+fun MarsPhotoCard(photo: MarsPhoto, modifier: Modifier = Modifier) {
+}
 
 @Preview(showBackground = true)
 @Composable
